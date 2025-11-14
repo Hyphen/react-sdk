@@ -33,6 +33,7 @@ export function withToggleProvider(options: ToggleOptions) {
 		};
 
 		// Preserve the original component name for debugging
+		/* v8 ignore next -- @preserve */
 		const componentName =
 			Component.displayName || Component.name || "Component";
 		WrappedComponent.displayName = `withToggleProvider(${componentName})`;
