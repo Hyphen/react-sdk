@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { render } from "@testing-library/react";
-import { useToggle } from "../src/useToggle";
-import { ToggleProvider } from "../src/ToggleProvider";
+import { useToggle } from "../src/use-toggle";
+import { ToggleProvider } from "../src/toggle-provider";
 
 describe("useToggle", () => {
 	test("should return Toggle instance when used within ToggleProvider", () => {

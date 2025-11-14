@@ -14,10 +14,6 @@ The Hyphen React SDK provides React components, hooks, and higher-order componen
 
 ```bash
 npm install @hyphen/react-sdk
-# or
-pnpm install @hyphen/react-sdk
-# or
-yarn add @hyphen/react-sdk
 ```
 
 ## Quick Start

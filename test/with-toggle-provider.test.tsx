@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { render } from "@testing-library/react";
-import { withToggleProvider } from "../src/withToggleProvider";
-import { useToggle } from "../src/useToggle";
+import { withToggleProvider } from "../src/with-toggle-provider";
+import { useToggle } from "../src/use-toggle";
 
 describe("withToggleProvider", () => {
 	test("should wrap component with ToggleProvider", () => {

@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { render } from "@testing-library/react";
-import { ToggleProvider, ToggleContext } from "../src/ToggleProvider";
+import { ToggleProvider, ToggleContext } from "../src/toggle-provider";
 import { useContext } from "react";
 
 describe("ToggleProvider", () => {

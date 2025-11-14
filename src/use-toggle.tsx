@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import type { Toggle } from "@hyphen/browser-sdk";
-import { ToggleContext } from "./ToggleProvider";
+import { ToggleContext } from "./toggle-provider";
 
 /**
  * Hook to access the Toggle instance from the ToggleProvider

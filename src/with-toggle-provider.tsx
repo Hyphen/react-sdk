@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import type { ToggleOptions } from "@hyphen/browser-sdk";
-import { ToggleProvider } from "./ToggleProvider";
+import { ToggleProvider } from "./toggle-provider";
 
 /**
  * Higher-order component that wraps a component with ToggleProvider
