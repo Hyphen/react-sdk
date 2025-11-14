@@ -28,19 +28,12 @@ describe("useToggle", () => {
 			return <div>Test</div>;
 		}
 
-		// Suppress console.error for this test since we expect an error
-		const originalError = console.error;
-		console.error = () => {};
-
 		expect(() => {
 			render(<TestComponent />);
 		}).toThrow(
 			"useToggle must be used within a ToggleProvider. " +
 				"Wrap your component tree with <ToggleProvider> or use withToggleProvider().",
 		);
-
-		// Restore console.error
-		console.error = originalError;
 	});
 
 	test("should provide access to Toggle methods", () => {
