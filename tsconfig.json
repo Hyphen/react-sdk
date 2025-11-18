@@ -1,22 +1,21 @@
 {
     "compilerOptions": {
       "target": "ESNext",
+      "lib": ["DOM", "ES2022", "DOM.Iterable"],
       "module": "ESNext",
-      "moduleResolution": "node",
+      "moduleResolution": "Bundler",
       "jsx": "react-jsx",
       "strict": true,
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,
       "skipLibCheck": true,
-      "outDir": "./dist",
-      "rootDir": "./src",
+      "noEmit": true,
       "resolveJsonModule": true,
       "allowSyntheticDefaultImports": true,
       "noImplicitAny": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true
+      "moduleDetection": "force"
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "dist"]
