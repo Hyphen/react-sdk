@@ -2,8 +2,9 @@ name: release
 
 on:
   workflow_dispatch:
-  release:
-    types: [released]
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -12,6 +13,7 @@ permissions:
 env:
   HYPHEN_PUBLIC_API_KEY: ${{ secrets.HYPHEN_PUBLIC_API_KEY }}
   HYPHEN_APPLICATION_ID: ${{ secrets.HYPHEN_APPLICATION_ID }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
   build:
@@ -34,7 +36,10 @@ jobs:
     - name: Testing    
       run: pnpm test:ci
 
+    - name: Set NPM Auth Token
+      run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+
     - name: Publish
       run: |
-        pnpm publish --ignore-scripts --access public
+        pnpm publish --provenance --ignore-scripts --access public
 
