@@ -6,7 +6,8 @@ on:
     types: [released]
 
 permissions:
-  contents: read    
+  contents: read
+  id-token: write
 
 env:
   HYPHEN_PUBLIC_API_KEY: ${{ secrets.HYPHEN_PUBLIC_API_KEY }}
