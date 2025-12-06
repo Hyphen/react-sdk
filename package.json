@@ -1,6 +1,6 @@
 {
   "name": "@hyphen/react-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hyphen SDK for React",
   "type": "module",
   "module": "dist/index.js",
