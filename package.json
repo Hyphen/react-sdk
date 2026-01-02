@@ -3,11 +3,13 @@
   "version": "1.0.2",
   "description": "Hyphen SDK for React",
   "type": "module",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs"
     }
   },
   "types": "dist/index.d.ts",
