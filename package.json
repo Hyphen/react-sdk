@@ -1,6 +1,6 @@
 {
   "name": "@hyphen/react-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hyphen SDK for React",
   "type": "module",
   "main": "dist/index.js",
@@ -54,7 +54,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@hyphen/browser-sdk": "1.0.5",
+    "@hyphen/browser-sdk": "1.0.6",
     "hookified": "1.14.0"
   },
   "peerDependencies": {

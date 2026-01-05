@@ -5,7 +5,6 @@ export default defineConfig({
   format: ['esm', 'cjs'],
   dts: true,
   clean: true,
-  splitting: false,
   target: 'es2020',
   outExtension: ({ format }) => {
     return format === 'esm' ? { js: '.js' } : { js: '.cjs' };
