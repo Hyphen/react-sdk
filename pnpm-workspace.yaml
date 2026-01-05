@@ -2,3 +2,5 @@ onlyBuiltDependencies:
   - '@swc/core'
   - esbuild
 minimumReleaseAge: 2880
+minimumReleaseAgeExclude:
+  - '@hyphen/browser-sdk'
