@@ -54,7 +54,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@hyphen/browser-sdk": "1.0.6",
+    "@hyphen/browser-sdk": "1.1.0",
     "hookified": "1.15.1"
   },
   "peerDependencies": {
