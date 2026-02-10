@@ -32,8 +32,8 @@
   "author": "Team Hyphen <hello@hyphen.ai>",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "2.3.11",
-    "@faker-js/faker": "10.2.0",
+    "@biomejs/biome": "2.3.14",
+    "@faker-js/faker": "10.3.0",
     "@swc/core": "1.15.11",
     "@testing-library/react": "16.3.2",
     "@types/node": "25.0.9",
