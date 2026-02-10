@@ -12,6 +12,6 @@ export default defineConfig({
   esbuildOptions(options) {
     options.jsx = 'automatic';
   },
-  external: ['react', 'react-dom'],
+  external: ['react'],
   noExternal: ['@hyphen/browser-sdk'],
 });
