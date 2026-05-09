@@ -21,18 +21,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: 24
+        cache: 'pnpm'
 
     - name: Install Dependencies
-      run: npm install pnpm@10 -g && pnpm install
+      run: pnpm install
 
-    - name: Build    
+    - name: Build
       run: pnpm build
 
-    - name: Testing    
+    - name: Testing
       run: pnpm test:ci
 
     - name: Set NPM Auth Token
@@ -41,4 +46,3 @@ jobs:
     - name: Publish
       run: |
         pnpm publish --no-git-checks --ignore-scripts --access public
-
