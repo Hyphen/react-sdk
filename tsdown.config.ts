@@ -9,5 +9,6 @@ export default defineConfig({
   deps: {
     neverBundle: ['react'],
     alwaysBundle: ['@hyphen/browser-sdk'],
+    onlyBundle: false,
   },
 });
