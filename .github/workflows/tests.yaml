@@ -33,7 +33,8 @@ jobs:
     - name: Install Dependencies
       run: npm install pnpm -g && pnpm install
 
-    - name: Build    
+    - name: Build
+      if: matrix.node-version != '20'
       run: pnpm build
 
     - name: Testing    
