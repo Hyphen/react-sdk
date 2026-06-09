@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v6
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v4
+      uses: pnpm/action-setup@v6
 
     - name: Use Node.js
       uses: actions/setup-node@v6
@@ -41,7 +41,7 @@ jobs:
       run: pnpm test:ci
 
     - name: Code Coverage
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v7
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: Hyphen/react-sdk
