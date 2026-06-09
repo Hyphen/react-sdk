@@ -12,7 +12,6 @@ permissions:
 env:
   HYPHEN_PUBLIC_API_KEY: ${{ secrets.HYPHEN_PUBLIC_API_KEY }}
   HYPHEN_APPLICATION_ID: ${{ secrets.HYPHEN_APPLICATION_ID }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
   build:
@@ -29,7 +28,7 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: 24
-        cache: 'pnpm'
+        registry-url: 'https://registry.npmjs.org'
 
     - name: Install Dependencies
       run: pnpm install --frozen-lockfile
@@ -40,9 +39,5 @@ jobs:
     - name: Testing
       run: pnpm test:ci
 
-    - name: Set NPM Auth Token
-      run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-
     - name: Publish
-      run: |
-        pnpm publish --no-git-checks --ignore-scripts --access public
+      run: pnpm publish --provenance --no-git-checks --ignore-scripts --access public

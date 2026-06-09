@@ -36,6 +36,10 @@
   ],
   "author": "Team Hyphen <hello@hyphen.ai>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyphen/react-sdk.git"
+  },
   "engines": {
     "node": ">=22.12.0"
   },
