@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@hyphen/browser-sdk':
-        specifier: ^1.1.2
-        version: 1.1.2
+        specifier: ^1.1.4
+        version: 1.1.4
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.5.2
@@ -340,8 +340,8 @@ packages:
     resolution: {integrity: sha512-bsxD8WLS5lIj7aaoCx1YJkktqYj5vlBUE6HWzu2Q51ksrGJ0H737ECCKlFU7Yf8Br45z9t99frBp/J7kzbMPAg==}
     engines: {node: ^20.19.0 || ^22.13.0 || ^23.5.0 || >=24.0.0, npm: '>=10'}
 
-  '@hyphen/browser-sdk@1.1.2':
-    resolution: {integrity: sha512-v1oqJJneOgyeeEVE56VoaUS1WLe/ZQyh520zJF0jUGnv/EIrpuW5m0jD3oaS4ZM31NJDW1UuEtLhM2g60HTn7g==}
+  '@hyphen/browser-sdk@1.1.4':
+    resolution: {integrity: sha512-XKoqLamM619R9hc3erQ2FMcXHnR6ATgNMl6/SeXEoDeuK9E2O03KU6FWyfrmeKt7756ClV0Bck9E8IeKSvAcCg==}
 
   '@jest/schemas@29.6.3':
     resolution: {integrity: sha512-mo5j5X+jIZmJQveBKeS/clAueipV7KgiX1vMgCxam1RNYiqE1w62n0/tJJnHtjW8ZHcQco5gY85jA3mi0L+nSA==}
@@ -968,8 +968,9 @@ packages:
   hookable@6.1.1:
     resolution: {integrity: sha512-U9LYDy1CwhMCnprUfeAZWZGByVbhd54hwepegYTK7Pi5NvqEj63ifz5z+xukznehT7i6NIZRu89Ay1AZmRsLEQ==}
 
-  hookified@2.1.1:
-    resolution: {integrity: sha512-AHb76R16GB5EsPBE2J7Ko5kiEyXwviB9P5SMrAKcuAu4vJPZttViAbj9+tZeaQE5zjDme+1vcHP78Yj/WoAveA==}
+  hookified@3.0.1:
+    resolution: {integrity: sha512-mtpUIV7U9reosQ16+OHWBd0Ca07fs1ryChQjBPuUMZnrRdLTCW+kEfkTcFudkaevp3gVe5H9FxDCBxYIdO+QQA==}
+    engines: {node: '>=22.18.0'}
 
   hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -1770,9 +1771,9 @@ snapshots:
 
   '@faker-js/faker@10.5.0': {}
 
-  '@hyphen/browser-sdk@1.1.2':
+  '@hyphen/browser-sdk@1.1.4':
     dependencies:
-      hookified: 2.1.1
+      hookified: 3.0.1
 
   '@jest/schemas@29.6.3':
     dependencies:
@@ -2309,7 +2310,7 @@ snapshots:
 
   hookable@6.1.1: {}
 
-  hookified@2.1.1: {}
+  hookified@3.0.1: {}
 
   hosted-git-info@2.8.9: {}
 
