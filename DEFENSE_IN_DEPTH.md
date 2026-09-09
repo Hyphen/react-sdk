@@ -5,11 +5,11 @@ Tracking against https://github.com/jaredwray/agentic/blob/main/skills/security/
 Profile: npm library · public
 
 ## 1. Security docs
-- [ ] `SECURITY.md` present — contact info + "How this repository is secured" summary (PR #64 pending)
-- [ ] `DEFENSE_IN_DEPTH.md` present (this file) (PR #64 pending)
+- [x] `SECURITY.md` present — contact info + "How this repository is secured" summary — PR #64
+- [x] `DEFENSE_IN_DEPTH.md` present (this file) — PR #64
 
 ## 2. CODEOWNERS and cloud bootstrap
-- [ ] `.github/CODEOWNERS` covers `/.github/`, `/.vscode/`, `/.cursor/`, `/.devcontainer/`, `/scripts/` with owners the maintainer names
+- [ ] `.github/CODEOWNERS` covers `/.github/`, `/.vscode/`, `/.cursor/`, `/.devcontainer/`, `/scripts/` with owners the maintainer names (PR #65 pending)
 - [ ] Codespaces and Cursor Cloud Agents bootstrap Aikido Safe Chain via scripts/setup-cloud-environment.sh (--ci shims, frozen lockfile)
 
 ## 3. Dependencies (pnpm)
