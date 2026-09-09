@@ -12,5 +12,4 @@ overrides:
   semver@5.7.2: 7.8.5
   undici-types@6.21.0: 6.28.0
 
-allowBuilds:
-  esbuild: true
+allowBuilds: {}
