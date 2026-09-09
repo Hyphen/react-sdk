@@ -29,3 +29,5 @@ hardening checklist; progress is tracked in [DEFENSE_IN_DEPTH.md](./DEFENSE_IN_D
 - CI workflows default to read-only `contents: read` permissions; generated output is never committed back from CI.
 - Workflows do not use `pull_request_target`.
 - The published package sets `repository.url` to this repo so provenance can map back.
+- `.github/CODEOWNERS` names `@jaredwray` for `/.github/`, `/.vscode/`, `/.cursor/`, `/.devcontainer/`, and `/scripts/`.
+- Aikido scans every build.
