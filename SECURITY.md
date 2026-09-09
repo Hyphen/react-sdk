@@ -1,9 +1,31 @@
 # Security Policy
 
-To report a security vulnerability, please post an issue in our repository for [@hyphen/react-sdk](https://github.com/hyphen/react-sdk/issues) and mark it with `security vulnerability`. You need to add in the issue description the following information:
+We take security seriously and work to keep this project up to date. If you discover a security vulnerability, please report it **privately** so we can investigate and ship a fix before the issue becomes public.
 
-- **Vulnerability Type**: Describe the type of vulnerability (e.g., XSS, CSRF, SQL Injection).
-- **Vulnerability Description**: Describe the vulnerability in detail, including how it can be exploited and what impact it may have.
-- **Proof of Concept**: If possible, provide a proof of concept (PoC) that demonstrates the vulnerability.
+## Reporting a vulnerability
 
-Once the issue has been validated, we will open a [Github Security Advisory](https://docs.github.com/en/code-security/repository-security-advisories/about-github-security-advisories-for-repositories), if necessary. When the issue has been resolved, we will alert users of the past vulnerability by publishing the security advisory.
+Please use one of the following private channels — **do not open a public issue, pull request, or discussion** for security concerns:
+
+1. **Preferred:** open a private report via GitHub's [Privately reporting a security vulnerability](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) flow on this repository's **Security** tab.
+2. **Email:** send the details to hello@hyphen.ai. If the issue is urgent, include `[SECURITY]` in the subject line and we will respond as soon as possible.
+
+When reporting, please include as much of the following as you can:
+
+- A description of the vulnerability and its impact.
+- Steps to reproduce, or a proof-of-concept.
+- The affected version(s) and platform.
+- Any suggested remediation, if you have one.
+
+We will acknowledge receipt, work with you on a coordinated disclosure timeline, and credit you in the advisory once a fix is published unless you ask to remain anonymous.
+
+## How this repository is secured
+
+This repository follows the [defense-in-depth](https://github.com/jaredwray/agentic/blob/main/skills/security/defense-in-depth-nodejs/SKILL.md)
+hardening checklist; progress is tracked in [DEFENSE_IN_DEPTH.md](./DEFENSE_IN_DEPTH.md). Measures currently in place:
+
+- pnpm is pinned via `packageManager` (`pnpm@12.3.0`).
+- Dependencies install through pnpm with a 7-day cooldown on new versions. Exotic subdependencies are blocked.
+- The lockfile is committed and CI installs with `--frozen-lockfile`. There is no Dependabot config; dependency updates go through reviewed PRs.
+- CI workflows default to read-only `contents: read` permissions; generated output is never committed back from CI.
+- Workflows do not use `pull_request_target`.
+- The published package sets `repository.url` to this repo so provenance can map back.
