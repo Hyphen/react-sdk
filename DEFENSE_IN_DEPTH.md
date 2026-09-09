@@ -29,7 +29,7 @@ Profile: npm library · public
 - [x] Every job installs Socket Firewall (`SocketDev/action` SHA-pinned, `firewall-version` pinned); `pnpm install` / `npm install` run as `sfw pnpm install` / `sfw npm install` — PR #70
 - [x] `.github/workflows/check-workflows.yaml` lints workflows with zizmor on every PR — PR #71
 - [x] Workflow `name:` and job `name:` contain no spaces (kebab-case) so they can be set as required status checks — verified 2026-09-09
-- [ ] `persist-credentials: false` on checkouts that don't push
+- [ ] `persist-credentials: false` on checkouts that don't push (PR #72 pending)
 - [x] No `pull_request_target` on workflows that run untrusted PR code — verified 2026-09-09
 - [ ] Artifact-publishing workflows disable `actions/setup-node` default caching (`package-manager-cache: false`) to prevent cache poisoning
 - [ ] No npm tokens (or other registry credentials) in Actions secrets
