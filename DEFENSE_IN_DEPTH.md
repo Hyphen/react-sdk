@@ -32,7 +32,7 @@ Profile: npm library · public
 - [x] `persist-credentials: false` on checkouts that don't push — PR #72
 - [x] No `pull_request_target` on workflows that run untrusted PR code — verified 2026-09-09
 - [x] Artifact-publishing workflows disable `actions/setup-node` default caching (`package-manager-cache: false`) to prevent cache poisoning — PR #73
-- [x] No npm tokens (or other registry credentials) in Actions secrets — verified 2026-09-09 (no NPM_TOKEN/NODE_AUTH_TOKEN in workflow YAML; publish uses OIDC `id-token`)
+- [ ] No npm tokens (or other registry credentials) in Actions secrets — workflows have no NPM_TOKEN/NODE_AUTH_TOKEN refs; Actions secrets could not be listed (403)
 
 ## 5. npm publishing — npm libraries only
 - [ ] OIDC trusted publishing configured **stage-only** on npmjs.com for the publish workflow — it can stage, never publish live (manual)
