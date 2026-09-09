@@ -27,7 +27,7 @@ hardening checklist; progress is tracked in [DEFENSE_IN_DEPTH.md](./DEFENSE_IN_D
 - Dependencies install through pnpm with a 7-day cooldown on new versions, lifecycle scripts blocked by default, `trustPolicy: no-downgrade`, and exotic subdependencies blocked.
 - The lockfile is committed and CI installs with `--frozen-lockfile`. There is no Dependabot config; dependency updates go through reviewed PRs.
 - CI workflows default to read-only `contents: read` permissions; generated output is never committed back from CI; every action is pinned to a full commit SHA; Socket Firewall (`sfw`) wraps `pnpm install`; zizmor lints workflows on every PR; checkouts that do not push set `persist-credentials: false`.
-- The release workflow disables `setup-node` package-manager caching.
+- The release workflow disables `setup-node` package-manager caching and stages packed tarballs with `pnpm stage publish` instead of publishing live.
 - Workflows do not use `pull_request_target`.
 - The published package sets `repository.url` to this repo so provenance can map back.
 - `.github/CODEOWNERS` names `@jaredwray` for `/.github/`, `/.vscode/`, `/.cursor/`, `/.devcontainer/`, and `/scripts/`.
