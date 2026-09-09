@@ -9,8 +9,8 @@ Profile: npm library · public
 - [x] `DEFENSE_IN_DEPTH.md` present (this file) — PR #64
 
 ## 2. CODEOWNERS and cloud bootstrap
-- [ ] `.github/CODEOWNERS` covers `/.github/`, `/.vscode/`, `/.cursor/`, `/.devcontainer/`, `/scripts/` with owners the maintainer names (PR #65 pending)
-- [ ] Codespaces and Cursor Cloud Agents bootstrap Aikido Safe Chain via scripts/setup-cloud-environment.sh (--ci shims, frozen lockfile)
+- [x] `.github/CODEOWNERS` covers `/.github/`, `/.vscode/`, `/.cursor/`, `/.devcontainer/`, `/scripts/` with owners the maintainer names — PR #65
+- [ ] Codespaces and Cursor Cloud Agents bootstrap Aikido Safe Chain via scripts/setup-cloud-environment.sh (--ci shims, frozen lockfile) (PR pending)
 
 ## 3. Dependencies (pnpm)
 - [x] `packageManager: pnpm@11.3+` pinned in `package.json` — verified 2026-09-09
@@ -42,7 +42,7 @@ Profile: npm library · public
 - [x] `package.json` `repository.url` accurate so provenance maps to this repo — verified 2026-09-09
 
 ## 6. Security tooling
-- [ ] Aikido runs on every build
+- [x] Aikido runs on every build — verified 2026-09-09 (PR #65: Aikido Security: check code)
 - [ ] Aikido release gate: the release workflow's stage-publish job `needs:` a passing `scan-release`
 - [ ] Socket reviews every PR that changes dependencies
 
