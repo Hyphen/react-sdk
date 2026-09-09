@@ -30,4 +30,6 @@ hardening checklist; progress is tracked in [DEFENSE_IN_DEPTH.md](./DEFENSE_IN_D
 - Workflows do not use `pull_request_target`.
 - The published package sets `repository.url` to this repo so provenance can map back.
 - `.github/CODEOWNERS` names `@jaredwray` for `/.github/`, `/.vscode/`, `/.cursor/`, `/.devcontainer/`, and `/scripts/`.
+- Codespaces and Cursor Cloud Agents install through Aikido Safe Chain; package-manager shims must not be bypassed.
+- The Codespaces Dev Container image is pinned by digest (`name:<tag>@sha256:<digest>`), not a floating tag.
 - Aikido scans every build.
