@@ -24,7 +24,7 @@ This repository follows the [defense-in-depth](https://github.com/jaredwray/agen
 hardening checklist; progress is tracked in [DEFENSE_IN_DEPTH.md](./DEFENSE_IN_DEPTH.md). Measures currently in place:
 
 - pnpm is pinned via `packageManager` (`pnpm@12.3.0`).
-- Dependencies install through pnpm with a 7-day cooldown on new versions, `trustPolicy: no-downgrade`, and exotic subdependencies blocked.
+- Dependencies install through pnpm with a 7-day cooldown on new versions, lifecycle scripts blocked by default, `trustPolicy: no-downgrade`, and exotic subdependencies blocked.
 - The lockfile is committed and CI installs with `--frozen-lockfile`. There is no Dependabot config; dependency updates go through reviewed PRs.
 - CI workflows default to read-only `contents: read` permissions; generated output is never committed back from CI.
 - Workflows do not use `pull_request_target`.
