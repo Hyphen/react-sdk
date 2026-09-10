@@ -23,9 +23,12 @@ We will acknowledge receipt, work with you on a coordinated disclosure timeline,
 This repository follows the [defense-in-depth](https://github.com/jaredwray/agentic/blob/main/skills/security/defense-in-depth-nodejs/SKILL.md)
 hardening checklist; progress is tracked in [DEFENSE_IN_DEPTH.md](./DEFENSE_IN_DEPTH.md). Measures currently in place:
 
+- All changes land through pull requests — direct pushes to `main` are blocked, and merging requires the `zizmor` and `build` status checks. Tags can only be created by repository admins; published GitHub Releases are immutable.
+- Workflow runs from outside collaborators require maintainer approval. Default workflow tokens are read-only, and only allowlisted GitHub Actions can run (`zizmorcore/*`, `SocketDev/*`, `pnpm/*`, `codecov/*`, plus GitHub-owned and verified creators).
+- Secret scanning and push protection are enabled. Dependabot alerts and security-update PRs are off; there is no Dependabot config.
 - pnpm is pinned via `packageManager` (`pnpm@12.3.0`).
 - Dependencies install through pnpm with a 7-day cooldown on new versions, lifecycle scripts blocked by default, `trustPolicy: no-downgrade`, and exotic subdependencies blocked.
-- The lockfile is committed and CI installs with `--frozen-lockfile`. There is no Dependabot config; dependency updates go through reviewed PRs.
+- The lockfile is committed and CI installs with `--frozen-lockfile`.
 - CI workflows default to read-only `contents: read` permissions; generated output is never committed back from CI; every action is pinned to a full commit SHA; Socket Firewall (`sfw`) wraps `pnpm install`; zizmor lints workflows on every PR; checkouts that do not push set `persist-credentials: false`.
 - The release workflow disables `setup-node` package-manager caching and stages packed tarballs with `pnpm stage publish` instead of publishing live.
 - Workflows do not use `pull_request_target`.
