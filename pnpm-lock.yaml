@@ -196,8 +196,8 @@ importers:
         specifier: ^17.4.2
         version: 17.4.2
       happy-dom:
-        specifier: ^20.14.5
-        version: 20.14.5
+        specifier: ^20.14.6
+        version: 20.14.6
       react:
         specifier: ^19.2.8
         version: 19.2.8
@@ -218,7 +218,7 @@ importers:
         version: 7.0.2
       vitest:
         specifier: ^5.0.3
-        version: 5.0.3(@types/node@22.20.5)(@vitest/coverage-v8@5.0.3)(happy-dom@20.14.5)(vite@8.2.2(@types/node@22.20.5))
+        version: 5.0.3(@types/node@22.20.5)(@vitest/coverage-v8@5.0.3)(happy-dom@20.14.6)(vite@8.2.2(@types/node@22.20.5))
 
 packages:
 
@@ -1024,8 +1024,8 @@ packages:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
     engines: {node: '>=10'}
 
-  happy-dom@20.14.5:
-    resolution: {integrity: sha512-x/RzkpWO40bTjIoT30iQtt64FLLmH/iRcUCN2X//bLx7H3ifkdfPXyqsro/OYtqzIAhiLMMA7mmiOR9C3NOKjQ==}
+  happy-dom@20.14.6:
+    resolution: {integrity: sha512-5DDsf4QmEIlRL6NkCv/fxSjYHHkZceL/IaYQdJc2h3G7DRTEai++VTjbfL0LB9geW2VrA3+vrjF3Efx+OTtX0Q==}
     engines: {node: '>=20.0.0'}
 
   hard-rejection@2.1.0:
@@ -1981,7 +1981,7 @@ snapshots:
       obug: 2.1.4
       std-env: 4.2.0
       tinyrainbow: 3.1.1
-      vitest: 5.0.3(@types/node@22.20.5)(@vitest/coverage-v8@5.0.3)(happy-dom@20.14.5)(vite@8.2.2(@types/node@22.20.5))
+      vitest: 5.0.3(@types/node@22.20.5)(@vitest/coverage-v8@5.0.3)(happy-dom@20.14.6)(vite@8.2.2(@types/node@22.20.5))
 
   '@vitest/istanbul-lib-coverage@1.0.2': {}
 
@@ -2252,7 +2252,7 @@ snapshots:
       merge2: 1.4.1
       slash: 3.0.0
 
-  happy-dom@20.14.5:
+  happy-dom@20.14.6:
     dependencies:
       '@types/node': 22.20.5
       '@types/whatwg-mimetype': 3.0.2
@@ -2775,7 +2775,7 @@ snapshots:
       '@types/node': 22.20.5
       fsevents: 2.3.3
 
-  vitest@5.0.3(@types/node@22.20.5)(@vitest/coverage-v8@5.0.3)(happy-dom@20.14.5)(vite@8.2.2(@types/node@22.20.5)):
+  vitest@5.0.3(@types/node@22.20.5)(@vitest/coverage-v8@5.0.3)(happy-dom@20.14.6)(vite@8.2.2(@types/node@22.20.5)):
     dependencies:
       '@types/chai': 5.2.3
       '@vitest/mocker': 5.0.3(vite@8.2.2(@types/node@22.20.5))
@@ -2794,7 +2794,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.20.5
       '@vitest/coverage-v8': 5.0.3(vitest@5.0.3)
-      happy-dom: 20.14.5
+      happy-dom: 20.14.6
     transitivePeerDependencies:
       - msw
 
