@@ -171,8 +171,8 @@ importers:
   .:
     dependencies:
       '@hyphen/browser-sdk':
-        specifier: ^1.1.5
-        version: 1.1.5
+        specifier: ^1.1.6
+        version: 1.1.6
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.5.15
@@ -312,8 +312,8 @@ packages:
     resolution: {integrity: sha512-3RQHgEtvL1Frl/d1cSreo7qhJ3Gk1OdNUai/CtZ8G+wYeRQnJih3s9xJ9/kgYekPQRdwgh0HXRPqMlzWGwivIQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || ^23.5.0 || >=24.0.0, npm: '>=10'}
 
-  '@hyphen/browser-sdk@1.1.5':
-    resolution: {integrity: sha512-Ao4uWoXShrFysrfHiLtPnp9e9J9NZ50q+kX5HmdRtIwxMHTTDRBhNLRh9boPPDFXT36RuHXbmTnt28Y7YsWO/Q==}
+  '@hyphen/browser-sdk@1.1.6':
+    resolution: {integrity: sha512-DzKM8jc5ww8i5F7ubQFq1e9w2XY8p0U0Qp9k8c7gkBJ5s518EblIT/nnx9gSkJi8zYpM84shMGEVE96Rj7igWQ==}
 
   '@jest/schemas@29.6.3':
     resolution: {integrity: sha512-mo5j5X+jIZmJQveBKeS/clAueipV7KgiX1vMgCxam1RNYiqE1w62n0/tJJnHtjW8ZHcQco5gY85jA3mi0L+nSA==}
@@ -1770,7 +1770,7 @@ snapshots:
 
   '@faker-js/faker@10.6.0': {}
 
-  '@hyphen/browser-sdk@1.1.5':
+  '@hyphen/browser-sdk@1.1.6':
     dependencies:
       hookified: 3.0.3
 
