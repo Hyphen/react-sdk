@@ -1,16 +1,12 @@
-import {
-	createContext,
-	useMemo,
-	useEffect,
-	type Context,
-} from "react";
 import { Toggle } from "@hyphen/browser-sdk";
+import { type Context, createContext, useEffect, useMemo } from "react";
 import type { ToggleProviderProps } from "./types";
 
 /**
  * React Context for the Toggle instance
  */
-export const ToggleContext: Context<Toggle | null> = createContext<Toggle | null>(null);
+export const ToggleContext: Context<Toggle | null> =
+	createContext<Toggle | null>(null);
 
 /**
  * Provider component that creates and provides a Toggle instance to the React tree
@@ -56,7 +52,7 @@ export function ToggleProvider({
 			// Toggle cleanup if needed (currently Toggle doesn't have a destroy method)
 			// This is here for future-proofing
 		};
-	}, [toggle]);
+	}, []);
 
 	return (
 		<ToggleContext.Provider value={toggle}>{children}</ToggleContext.Provider>
