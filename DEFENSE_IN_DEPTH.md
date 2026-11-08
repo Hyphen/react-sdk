@@ -14,7 +14,7 @@ Profile: npm library · public
 - [x] Dev Container `image` pinned by digest (`name:<tag>@sha256:<digest>`; not a floating tag) — PR #66
 
 ## 3. Dependencies (pnpm)
-- [x] `packageManager: pnpm@11.3+` pinned in `package.json` — verified 2026-09-09
+- [x] `packageManager` pins `pnpm@12.17.0` in `package.json` — verified 2026-11-08
 - [x] 7-day cooldown: `minimumReleaseAge: 10080`, `minimumReleaseAgeStrict: true`, `minimumReleaseAgeIgnoreMissingTime: false`; no first-party `minimumReleaseAgeExclude` — verified 2026-09-09
 - [x] `trustPolicy: no-downgrade`; no first-party `trustPolicyExclude` — PR #67
 - [x] Lifecycle scripts blocked: `strictDepBuilds: true`, `dangerouslyAllowAllBuilds: false`, `allowBuilds: {}` baseline — PR #68
@@ -43,7 +43,7 @@ Profile: npm library · public
 - [x] `package.json` `repository.url` accurate so provenance maps to this repo — verified 2026-09-09
 
 ## 6. Security tooling
-- [x] Aikido runs on every build — verified 2026-09-09 (PR #65: Aikido Security: check code)
+- [x] The release workflow runs the Aikido scan — PR #75. Pull request workflows do not run Aikido. The check "Aikido Security: check code" on PR #65 is a hosted app. It is not a workflow step. — verified 2026-11-08
 - [x] Aikido release gate: the release workflow's stage-publish job `needs:` a passing `scan-release` — PR #75
 - [ ] Socket reviews every PR that changes dependencies
 

@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import type { Toggle } from "@hyphen/browser-sdk";
+import { useContext } from "react";
 import { ToggleContext } from "./toggle-provider";
 
 /**

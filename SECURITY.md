@@ -26,14 +26,15 @@ hardening checklist; progress is tracked in [DEFENSE_IN_DEPTH.md](./DEFENSE_IN_D
 - All changes land through pull requests — direct pushes to `main` are blocked, and merging requires the `zizmor` and `build` status checks. Tags can only be created by repository admins; published GitHub Releases are immutable.
 - Workflow runs from outside collaborators require maintainer approval. Default workflow tokens are read-only, and only allowlisted GitHub Actions can run (`zizmorcore/*`, `SocketDev/*`, `pnpm/*`, `codecov/*`, plus GitHub-owned and verified creators).
 - Secret scanning and push protection are enabled. Dependabot alerts and security-update PRs are off; there is no Dependabot config.
-- pnpm is pinned via `packageManager` (`pnpm@12.3.0`).
+- pnpm is pinned in the `packageManager` field of `package.json`.
 - Dependencies install through pnpm with a 7-day cooldown on new versions, lifecycle scripts blocked by default, `trustPolicy: no-downgrade`, and exotic subdependencies blocked.
 - The lockfile is committed and CI installs with `--frozen-lockfile`.
 - CI workflows default to read-only `contents: read` permissions; generated output is never committed back from CI; every action is pinned to a full commit SHA; Socket Firewall (`sfw`) wraps `pnpm install`; zizmor lints workflows on every PR; checkouts that do not push set `persist-credentials: false`.
+- The zizmor job grants `security-events: write` to upload SARIF results.
 - The release workflow disables `setup-node` package-manager caching and stages packed tarballs with `pnpm stage publish` instead of publishing live.
 - Workflows do not use `pull_request_target`.
 - The published package sets `repository.url` to this repo so provenance can map back.
 - `.github/CODEOWNERS` names `@jaredwray` for `/.github/`, `/.vscode/`, `/.cursor/`, `/.devcontainer/`, and `/scripts/`.
 - Codespaces and Cursor Cloud Agents install through Aikido Safe Chain; package-manager shims must not be bypassed.
 - The Codespaces Dev Container image is pinned by digest (`name:<tag>@sha256:<digest>`), not a floating tag.
-- Aikido scans every build. Stage-publish is gated on a passing Aikido `scan-release` job.
+- The release workflow runs the Aikido scan. Pull request workflows do not run Aikido. Stage-publish needs a passing `scan-release` job.

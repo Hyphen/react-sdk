@@ -1,5 +1,5 @@
-import type { ComponentType } from "react";
 import type { ToggleOptions } from "@hyphen/browser-sdk";
+import type { ComponentType } from "react";
 import { ToggleProvider } from "./toggle-provider";
 
 /**
@@ -21,9 +21,7 @@ import { ToggleProvider } from "./toggle-provider";
  * ```
  */
 export function withToggleProvider(options: ToggleOptions) {
-	return function <P extends object>(
-		Component: ComponentType<P>,
-	): ComponentType<P> {
+	return <P extends object>(Component: ComponentType<P>): ComponentType<P> => {
 		const WrappedComponent = (props: P) => {
 			return (
 				<ToggleProvider {...options}>

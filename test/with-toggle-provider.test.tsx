@@ -1,17 +1,40 @@
-import { describe, expect, test } from "vitest";
 import { render } from "@testing-library/react";
-import { withToggleProvider } from "../src/with-toggle-provider";
+import { describe, expect, test } from "vitest";
 import { useToggle } from "../src/use-toggle";
+import { withToggleProvider } from "../src/with-toggle-provider";
+
+function StaticTestComponent() {
+	return <div>Test Component</div>;
+}
+
+let toggleInstance: unknown = null;
+
+function CaptureToggle() {
+	toggleInstance = useToggle();
+	return <div>Test</div>;
+}
+
+function NamedTestComponent() {
+	return <div>Test</div>;
+}
+
+function TestComponent() {
+	return <div>Test</div>;
+}
+
+interface TestProps {
+	testProp: string;
+}
+
+function PropTestComponent({ testProp }: TestProps) {
+	return <div>{testProp}</div>;
+}
 
 describe("withToggleProvider", () => {
 	test("should wrap component with ToggleProvider", () => {
-		function TestComponent() {
-			return <div>Test Component</div>;
-		}
-
 		const WrappedComponent = withToggleProvider({
 			publicApiKey: "public_test",
-		})(TestComponent);
+		})(StaticTestComponent);
 
 		const { getByText } = render(<WrappedComponent />);
 
@@ -19,17 +42,12 @@ describe("withToggleProvider", () => {
 	});
 
 	test("should provide Toggle instance to wrapped component", () => {
-		let toggleInstance: unknown = null;
-
-		function TestComponent() {
-			toggleInstance = useToggle();
-			return <div>Test</div>;
-		}
+		toggleInstance = null;
 
 		const WrappedComponent = withToggleProvider({
 			publicApiKey: "public_test",
 			applicationId: "test-app",
-		})(TestComponent);
+		})(CaptureToggle);
 
 		render(<WrappedComponent />);
 
@@ -38,14 +56,11 @@ describe("withToggleProvider", () => {
 	});
 
 	test("should preserve component display name", () => {
-		function TestComponent() {
-			return <div>Test</div>;
-		}
-		TestComponent.displayName = "MyTestComponent";
+		NamedTestComponent.displayName = "MyTestComponent";
 
 		const WrappedComponent = withToggleProvider({
 			publicApiKey: "public_test",
-		})(TestComponent);
+		})(NamedTestComponent);
 
 		expect(WrappedComponent.displayName).toBe(
 			"withToggleProvider(MyTestComponent)",
@@ -53,10 +68,6 @@ describe("withToggleProvider", () => {
 	});
 
 	test("should use component name when displayName is not set", () => {
-		function TestComponent() {
-			return <div>Test</div>;
-		}
-
 		const WrappedComponent = withToggleProvider({
 			publicApiKey: "public_test",
 		})(TestComponent);
@@ -67,17 +78,9 @@ describe("withToggleProvider", () => {
 	});
 
 	test("should pass props to wrapped component", () => {
-		interface TestProps {
-			testProp: string;
-		}
-
-		function TestComponent({ testProp }: TestProps) {
-			return <div>{testProp}</div>;
-		}
-
 		const WrappedComponent = withToggleProvider({
 			publicApiKey: "public_test",
-		})(TestComponent);
+		})(PropTestComponent);
 
 		const { getByText } = render(<WrappedComponent testProp="Hello World" />);
 
@@ -85,18 +88,13 @@ describe("withToggleProvider", () => {
 	});
 
 	test("should pass Toggle configuration to provider", () => {
-		let toggleInstance: unknown = null;
-
-		function TestComponent() {
-			toggleInstance = useToggle();
-			return <div>Test</div>;
-		}
+		toggleInstance = null;
 
 		const WrappedComponent = withToggleProvider({
 			publicApiKey: "public_test",
 			applicationId: "my-app",
 			environment: "production",
-		})(TestComponent);
+		})(CaptureToggle);
 
 		render(<WrappedComponent />);
 

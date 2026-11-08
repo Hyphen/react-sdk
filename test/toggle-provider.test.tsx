@@ -1,7 +1,14 @@
-import { describe, expect, test } from "vitest";
 import { render } from "@testing-library/react";
-import { ToggleProvider, ToggleContext } from "../src/toggle-provider";
 import { useContext } from "react";
+import { describe, expect, test } from "vitest";
+import { ToggleContext, ToggleProvider } from "../src/toggle-provider";
+
+let toggleInstance: unknown;
+
+function ReadToggle() {
+	toggleInstance = useContext(ToggleContext);
+	return <div>Test</div>;
+}
 
 describe("ToggleProvider", () => {
 	test("should render children", () => {
@@ -15,16 +22,11 @@ describe("ToggleProvider", () => {
 	});
 
 	test("should provide Toggle instance through context", () => {
-		let toggleInstance: unknown = null;
-
-		function TestComponent() {
-			toggleInstance = useContext(ToggleContext);
-			return <div>Test</div>;
-		}
+		toggleInstance = null;
 
 		render(
 			<ToggleProvider publicApiKey="public_test" applicationId="test-app">
-				<TestComponent />
+				<ReadToggle />
 			</ToggleProvider>,
 		);
 
@@ -33,12 +35,7 @@ describe("ToggleProvider", () => {
 	});
 
 	test("should create Toggle with correct configuration", () => {
-		let toggleInstance: unknown = null;
-
-		function TestComponent() {
-			toggleInstance = useContext(ToggleContext);
-			return <div>Test</div>;
-		}
+		toggleInstance = null;
 
 		render(
 			<ToggleProvider
@@ -46,7 +43,7 @@ describe("ToggleProvider", () => {
 				applicationId="test-app"
 				environment="production"
 			>
-				<TestComponent />
+				<ReadToggle />
 			</ToggleProvider>,
 		);
 
@@ -56,14 +53,9 @@ describe("ToggleProvider", () => {
 	});
 
 	test("should provide null context when no provider is used", () => {
-		let toggleInstance: unknown = undefined;
+		toggleInstance = undefined;
 
-		function TestComponent() {
-			toggleInstance = useContext(ToggleContext);
-			return <div>Test</div>;
-		}
-
-		render(<TestComponent />);
+		render(<ReadToggle />);
 
 		expect(toggleInstance).toBeNull();
 	});
